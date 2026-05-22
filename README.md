@@ -41,6 +41,8 @@ npm test
 
 - Socket.IO is used for real-time notifications; `socket.io-client` is included in dependencies.
 - If you change the backend port, update `apiBaseUrl` in `src/environments/environment.ts`.
+ - Production builds use `src/environments/environment.prod.ts`; by default this is set to https://blog-in-api.vercel.app.
+	 Update that file if you need to point to a different production API.
 
 ## License
 
