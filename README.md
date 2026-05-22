@@ -43,6 +43,8 @@ npm test
 - If you change the backend port, update `apiBaseUrl` in `src/environments/environment.ts`.
  - Production builds use `src/environments/environment.prod.ts`; by default this is set to https://blog-in-api.vercel.app.
 	 Update that file if you need to point to a different production API.
+ - WebSockets on Vercel: Vercel's serverless functions do not support long-lived WebSocket connections.
+	 If you need real-time Socket.IO connections in production, deploy the API to a platform that supports WebSockets (Render, Railway, Fly, DigitalOcean App Platform, a VPS, etc.), or run a separate Socket.IO server and point the client to it.
 
 ## License
 
