@@ -1,0 +1,45 @@
+
+<div class="notifications-shell">
+    <div class="notifications-grid">
+        <aside class="right">
+            <div class="info-card">
+                <div class="info-title fami"><i class="fa-solid fa-bell"></i> Notifications</div>
+                <div class="info-sub">You can delete all your notifications by clicking <button class="info-link" (click)="deleteNotification()">Here</button></div>
+            </div>
+        </aside>
+
+        <section class="left">
+            <div *ngIf="!notifications?.length" class="empty-state">
+                <div class="empty-title">No notifications yet</div>
+                <div class="empty-sub">When someone interacts with your content, it will show up here.</div>
+            </div>
+
+            <div class="notifications">
+                <div class="notification" *ngFor="let notif of notifications; let i = index" [style.animationDelay]="(i * 40) + 'ms'">
+                    <div (click)="visitProfil(notif.sender)" class="sender-line">
+                        <img class="sender-avatar" [src]="'../../../assets/images/'+notif.senderIcon" alt="">
+                        <div class="sender-name">{{notif.senderName}}</div>
+                    </div>
+
+                    <div *ngIf="notif.type =='join'" class="message">{{notif.senderName}} invited you <span *ngIf="notif.others.length-1>1"> and <span class="link">{{notif.others.length-1}} others</span></span> to write an article</div>
+                    <div *ngIf="notif.type =='share'" class="message">{{notif.senderName}} shared this article with you</div>
+                    <div *ngIf="notif.type =='follow'" class="message">{{notif.senderName}} started following you</div>
+                    <div *ngIf="notif.type =='comment'" class="message">{{notif.senderName}} commented on one of your articles</div>
+                    <div *ngIf="notif.type =='like'" class="message">{{notif.senderName}} liked one of your articles</div>
+
+                    <p class="quick-link" (click)="readArticle(notif.articleId)" *ngIf="notif.type ==='comment'||notif.type ==='like'">Check out!</p>
+                    <p class="detail" *ngIf="notif.type =='join'">Article Brief: {{notif.title}}</p>
+                    <p class="detail" *ngIf="notif.type =='share'">Article Title: <span (click)="readArticle(notif.articleId)" class="link">{{notif.title}}</span></p>
+
+                    <div class="actions" *ngIf="notif.type === 'join'">
+                        <button *ngIf="!notif.accepted" (click)="addCollaborator(notif.articleId , notif._id , notif.others)" class="btn-accept">Join</button>
+                        <button *ngIf="!notif.accepted" class="btn-decline">Refuse</button>
+                        <div *ngIf="notif.accepted" class="btn-joined">You joined this article</div>
+                    </div>
+
+                    <div class="timestamp">{{notif.date|date:'medium'}}</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

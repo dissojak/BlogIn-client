@@ -1,0 +1,192 @@
+.fami{
+    font-family: 'Playfair Display', serif;
+}
+
+.writer-bg{
+  background: transparent;
+}
+
+.writer-shell{
+  min-height: 90vh;
+  padding: 2.5rem 0 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  background: radial-gradient(1200px 520px at 15% -10%, #fff1d8 0%, #ffffff 55%, #f7f1e8 100%);
+}
+
+@media (min-width: 1024px){
+  .writer-shell{
+    grid-template-columns: minmax(0, 1fr) 360px;
+    align-items: start;
+  }
+}
+
+.writer-body{
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  animation: fade-up 0.5s ease both;
+}
+
+.writer-top{
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.writer-collab{
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.writer-title{
+  font-size: clamp(2.1rem, 3.2vw, 3.6rem);
+  line-height: 1.1;
+  padding: 0.35rem 0;
+}
+
+.writer-section{
+  font-size: clamp(1.05rem, 1.5vw, 1.4rem);
+  line-height: 1.75;
+  padding: 0.35rem 0;
+}
+
+.writer-title:focus,
+.writer-section:focus{
+  background: #fffdf5;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(41, 28, 48, 0.08);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.writer-links{
+  color: #374151;
+}
+
+.writer-side{
+  width: 100%;
+}
+
+@media (min-width: 1024px){
+  .writer-side{
+    position: sticky;
+    top: 6.5rem;
+    height: fit-content;
+  }
+}
+
+.schedule-banner{
+  max-width: 720px;
+  margin: 0 auto 1rem;
+  padding: 0.6rem 1rem;
+  text-align: center;
+  background: linear-gradient(180deg, #ffffff 0%, #fff6e4 100%);
+  border: 1px solid #f0e4d1;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: #6b7280;
+  box-shadow: 0 8px 20px rgba(41, 28, 48, 0.06);
+}
+
+.save{
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.1);
+}
+
+.br{
+   
+    border-left: 2px rgb(251 191 36) solid;
+}
+textarea::-webkit-scrollbar {
+  display: none;
+}
+.followers::-webkit-scrollbar{
+  width: 7px;
+}
+.followers::-webkit-scrollbar-track {
+  background-color: rgb(237, 237, 237);
+  border-radius: 10px;
+}
+.followers::-webkit-scrollbar-thumb{
+  background: #ccc;
+  border-radius: 10px;
+}
+.top{
+    top: 10rem;
+}
+.anim{
+    transition: all .2s ease-in-out;
+}
+
+@keyframes fade-up{
+  from{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  /*for the search ber*/
+
+  .flexbox {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0;
+    border-radius: 10px;
+  
+  }
+ 
+  
+  .search > div > input {
+    color: black;
+    font-size: 16px;
+    background: transparent;
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    border: solid 1px darkgray;
+    outline: none;
+    border-radius: 35px;
+    transition: width 0.5s;
+  
+  }
+  .search > div > input:hover{
+    cursor:text;
+  }
+  /*end of css of search bar*/
+  [contenteditable][placeholder]:empty:before {
+    content: attr(placeholder);
+    position: absolute;
+    color: gray;
+    background-color: transparent;
+  }
+  [contenteditable]:empty:hover{
+    cursor: text;
+  }
+
+  .avatar::before,
+  .avatar::after:hover{
+    content: 'hazem ben saeri';
+    position: absolute;
+    top: -.25rem;
+    height: 50px;
+    width: 50px;
+    background: #000;
+    color: wheat;
+    left: 50%;
+    /* transform: translateX(-50%) translateY(-100%); */
+  }
+  .avatar::before{
+    content: 'hazem ben saria';
+    color: wheat;
+    height: 50px;
+    width: 50px;
+    background: #000;
+  }
+ 

@@ -1,0 +1,78 @@
+<div class="father w-full bg-white sticky top-0 z-[99999]">
+    <div class="nav-inner h-16 w-full max-w-[1200px] mx-auto px-6 flex items-center justify-between">
+        <div routerLink="/" class="logo text-2xl sm:text-3xl font-semibold tracking-tight hover:cursor-pointer">
+            <span class="text-amber-400">Z</span>-one
+        </div>
+
+        <div class="items flex items-center gap-6 sm:gap-8 text-sm sm:text-base">
+      
+                
+        <a (click)="showSettings=false" routerLinkActive="active" routerLink="/home" class="item nav-link flex items-center h-full px-2 py-1">
+            <span class="hidden sm:inline">home</span>
+            <span class="sm:hidden"><i class="fa-solid fa-house"></i></span>
+        </a>
+        <a (click)="showSettings=false" routerLinkActive="active" matBadgeSize="small" [matBadge]="nbNotifications" [matBadgeHidden]="nbNotifications==0" matBadgeColor="warn" routerLink="/notifications" *ngIf="isConnected" class="relative item nav-link flex items-center h-full px-2 py-1">
+            <span class="hidden sm:inline">notifications</span>
+            <span class="sm:hidden"><i class="fa-solid fa-bell"></i></span>
+        </a>
+        
+        <a (click)="showSettings=false" routerLinkActive="active" *ngIf="isConnected" routerLink="/write" class="item nav-link flex items-center h-full px-2 py-1">
+            <span class="hidden sm:inline">write</span>
+            <span class="sm:hidden"><i class="fa-solid fa-pen"></i></span>
+        </a>
+       <div class="relative ">
+        <a routerLinkActive="active" (click)="showSettings=!showSettings" *ngIf="isConnected" class="item nav-avatar hover:cursor-pointer">
+            <img [src]="img" alt="profile" class="w-9 h-9 rounded-full object-cover border border-gray-200"> 
+            
+        </a>
+         <div *ngIf="showSettings" class="hover:cursor-default bg-white parentHide border border-solid shadow-lg border-[rgb(211,211,211)] absolute top-[3.5rem] right-0 rounded-[5px]">
+            <div class="hide w-[15rem] min-h-[13rem] p-2 pt-4   ">
+               <ul>
+                <li class="text-sm mb-4 flex flex-col gap-4 font-light">
+                    <div (click)="profile()"  class="item h-[2rem] w-full m-auto flex justify-center items-center text-black font-medium text-sm hover:cursor-pointer border border-solid border-gray-400 rounded-[20px]  ">
+                        Profile
+                     </div>
+
+                    <div class="flex flex-col ">
+                        <div class="text-gray-500 text-xs gap-1">{{user.email}}</div>
+                        <div class=" font-medium  ">{{user.name}}</div>
+                  
+                    </div>
+                    
+                    <hr>
+                </li>
+                <li>
+                    <div  (click)="logout()" class="item  hover:cursor-pointer text-sm font-light  mb-4 ">
+                        Log Out
+                     </div>
+                </li>
+                <li class=" text-sm font-light mb-4 ">
+                    <div (click)="settings()" class="item hover:cursor-pointer ">
+                        Adjust Profile
+                     </div>
+                </li>
+                <li (click)="stat()" class=" text-sm font-light mb-4 hover:cursor-pointer ">
+                    Stats
+                </li>
+                <li (click)="saves()" class=" text-sm font-light mb-4 hover:cursor-pointer ">
+                    Saves
+                </li>
+                <li (click)="history()" class=" text-sm font-light mb-4 hover:cursor-pointer ">
+                    Reading History
+                </li>
+                <li (click)="settings()" class=" text-sm font-light mb-4 hover:cursor-pointer ">
+                    Settings
+                </li>
+                <li *ngIf="user.role==='admin'" (click)="accessDashboard()" class=" text-sm font-light mb-4 hover:cursor-pointer ">
+                    Admin Dashboard
+                </li>
+               </ul>
+            </div>
+         
+            <div class="corner bg-white absolute top-[-9px] right-[18px]"></div>
+        </div> 
+       </div>
+        
+        </div>
+    </div>
+</div>

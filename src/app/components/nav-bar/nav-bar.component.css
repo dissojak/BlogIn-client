@@ -1,0 +1,40 @@
+.father{
+    background: linear-gradient(180deg, #ffffff 0%, #fbf7ee 100%);
+    border-bottom: 1px solid #efe5d4;
+    box-shadow: 0 6px 18px rgba(41, 28, 48, 0.06);
+    backdrop-filter: blur(6px);
+}
+.fami{
+    font-family: 'Playfair Display', serif;
+}
+
+.logo{
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.02em;
+}
+
+.nav-link{
+    color: #2b2a2f;
+    border-radius: 999px;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.nav-link:hover{
+    background: rgba(251, 191, 36, 0.18);
+    color: #1f2937;
+}
+.nav-avatar img{
+    box-shadow: 0 6px 14px rgba(41, 28, 48, 0.18);
+}
+
+.corner{
+    border-top: 1px lightgray solid;
+    border-left: 1px lightgray solid;
+    width: 16px;
+    height: 16px;
+    rotate: 45deg;
+  }
+    .active{
+        box-sizing: border-box;
+        transition: all .1s ease-in-out;
+        box-shadow: inset 0 -2px 0 #fbbf24;
+}

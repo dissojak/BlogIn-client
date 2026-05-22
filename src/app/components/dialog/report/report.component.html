@@ -1,0 +1,22 @@
+<div class="father lg:w-[40rem] sm:w-[20rem] p-6">
+    <div class="flex justify-between items-center mb-4">
+        <div class="text-lg font-medium">Report this post</div>
+        <button [mat-dialog-close] class="text-gray-700 hover:text-black"><i class="fa-solid fa-xmark text-lg"></i></button>
+    </div>
+
+    <div class="problems overflow-y-auto max-h-56 flex flex-col gap-3 mb-4">
+        <label *ngFor="let problem of problems" class="flex items-center gap-3 py-2">
+            <input (click)="selectProblem(problem)" type="checkbox" class="w-4 h-4" />
+            <span class="text-base font-medium">{{problem}}</span>
+        </label>
+    </div>
+
+    <textarea [(ngModel)]="desc" name="title" placeholder="You want to add something ..."
+        class="w-full border border-gray-200 rounded-md p-3 min-h-[4rem] lg:min-h-[8rem] resize-vertical focus:outline-none focus:ring-2 focus:ring-red-100"></textarea>
+
+    <div class="flex justify-end mt-4">
+        <button (click)="report()" [mat-dialog-close]
+            class="bg-red-500 px-5 py-2 text-white rounded-md hover:bg-red-600">Send report</button>
+    </div>
+
+</div>

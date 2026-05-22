@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
+@import '~ngx-toastr/toastr';
+html{
+    scroll-behavior: smooth;
+    color: #291c30;
+}
+
+body{
+    font-family: 'Space Grotesk', sans-serif;
+}

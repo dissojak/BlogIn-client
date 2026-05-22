@@ -1,0 +1,18 @@
+
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+
+<div *ngIf="readingArticle" class="fixed bottom-8 right-4 z-[9999999] rounded-lg bg-gray-100 p-2 shadow-lg">
+  <div class="flex items-center justify-end">
+    <button type="button" (click)="stopText()" class="bg-transparent hover:cursor-pointer">
+      <i class="fa-sharp fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <div class="flex items-center justify-between gap-2 p-2">
+    <button (click)="playText()" class="bg-green-600 px-4 flex h-[2rem] items-center justify-center rounded-[20px] font-medium leading-4 text-white hover:cursor-pointer">Play Text</button>
+    <button (click)="pausText()" class="bg-green-600 px-4 flex h-[2rem] items-center justify-center rounded-[20px] font-medium leading-4 text-white hover:cursor-pointer">Pause Text</button>
+    <button (click)="stopText()" class="bg-green-600 px-4 flex h-[2rem] items-center justify-center rounded-[20px] font-medium leading-4 text-white hover:cursor-pointer">Stop Reading</button>
+  </div>
+</div>
+
