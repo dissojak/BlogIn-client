@@ -1,27 +1,47 @@
-# Zone
+# BlogIn — Angular Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3.
+Frontend application for the BlogIn project (Angular).
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Node.js and npm
+- Angular CLI (optional, for global `ng` commands)
 
-## Code scaffolding
+## Setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+cd BlogIn-client
+npm install
+```
+
+## Configure
+
+The client expects the backend API base URL to be set in `src/environments/environment.ts` under `apiBaseUrl`. By default it is set to `http://localhost:4444` — ensure this matches your backend server port (the API uses `4400` by default).
+
+## Run (development)
+
+```bash
+npm start
+# opens at http://localhost:3000
+```
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm run build
+```
 
-## Running unit tests
+## Tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm test
+```
 
-## Running end-to-end tests
+## Notes
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Socket.IO is used for real-time notifications; `socket.io-client` is included in dependencies.
+- If you change the backend port, update `apiBaseUrl` in `src/environments/environment.ts`.
 
-## Further help
+## License
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+MIT
