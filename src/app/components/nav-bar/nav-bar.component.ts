@@ -33,9 +33,16 @@ readonly uri : string = environment.apiBaseUrl
       this.nbNotifications =0
     })
     
+    // Allow polling fallback (some hosts / proxies block native WebSockets)
+    // If your API is deployed on Vercel (serverless) it does not support
+    // long-lived WebSocket connections — consider deploying the Socket.IO
+    // server to a host that supports WebSockets (Render, Railway, Fly, etc.)
     this.socket = io(this.uri, {
-      transports: ['websocket'],
-      upgrade: false
+      transports: ['polling', 'websocket'],
+      // reconnection options
+      reconnection: true,
+      reconnectionAttempts: 10,
+      reconnectionDelay: 1000
     })
     this.notificationService.socket =this.socket
     this.socket.on('aa', () => {})
